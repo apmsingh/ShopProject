@@ -1,0 +1,21 @@
+apply plugin: 'eclipse'
+apply plugin: 'java'
+
+description ="""
+Project name: ${project.name} """
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}
+
+task hello {
+ println 'Shop Proejct'
+}
+
+repositories {
+  mavenCentral ()
+}
+
+dependencies {
+   
+}
