@@ -2,8 +2,10 @@ package com.cs.test.network.local;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.GenericServlet;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -19,7 +21,12 @@ public class ServletTest extends GenericServlet
     res.setContentType("text/html");
     PrintWriter writer = res.getWriter();
     writer.write("</p>Hello Shop project</p>");
-    writer.println("</p>Hello Shop Project printer</p>");
+    Enumeration<String> parameterNames = req.getParameterNames(); 
+    while(parameterNames.hasMoreElements())
+    {
+      String nextElement = parameterNames.nextElement();
+      writer.write(nextElement + " : " + req.getParameter(nextElement));
+    }
     writer.close();
   }
 
