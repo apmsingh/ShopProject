@@ -1,1 +1,0 @@
-This project is belong to shops.
