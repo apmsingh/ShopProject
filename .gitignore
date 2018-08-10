@@ -1,0 +1,13 @@
+/.gradle
+*/bin/
+*/.gradle
+*/.settings
+*/.classpath
+*/.project
+*.log
+*.out
+*.idea
+*.bak
+/.metadata/
+gradlew
+build/*
