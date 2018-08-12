@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.akhikhl.gretty'
+
+task runApp(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'com.cs.config.screen.base.ConfigScreen'
+ // args 'appArg1'
+}
+
+repositories {
+  mavenCentral ()
+}
+
+dependencies {
+	compile project(':BaseRESTController')
+	compile project(':RESTController')
+	compile project(':UIInterface')
+	compile project(':UIConstants')
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+
+gretty {
+    servletContainer = 'jetty9'
+}
+
