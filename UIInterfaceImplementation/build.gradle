@@ -4,8 +4,7 @@ apply plugin: 'org.akhikhl.gretty'
 
 task runApp(type: JavaExec) {
   classpath = sourceSets.main.runtimeClasspath
-  main = 'com.cs.config.screen.base.ConfigScreen'
- // args 'appArg1'
+  main = 'com.cs.config.screen.base.Screen'
 }
 
 repositories {
