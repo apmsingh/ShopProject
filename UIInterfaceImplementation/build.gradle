@@ -1,14 +1,40 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.akhikhl.gretty'
+//apply plugin: 'org.akhikhl.gretty'
 
+/*
 task runApp(type: JavaExec) {
   classpath = sourceSets.main.runtimeClasspath
-  main = 'com.cs.config.screen.base.Screen'
+  main = 'com.cs.config.screen.base.ApplicationInitializer'
+}
+*/
+
+buildscript {
+	ext {
+		springBootVersion = '2.0.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
 }
 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.cs'
+version = '0.0.1'
+sourceCompatibility = 1.8
+
 repositories {
-  mavenCentral ()
+	mavenCentral()
+}
+
+bootJar {
+    baseName = 'shop-project'
+    version =  '0.1.0'
 }
 
 dependencies {
@@ -16,18 +42,8 @@ dependencies {
 	compile project(':RESTController')
 	compile project(':UIInterface')
 	compile project(':UIConstants')
+	
+	compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.4.RELEASE'
+	testCompile("junit:junit")
 }
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'org.akhikhl.gretty:gretty:+'
-    }
-}
-
-gretty {
-    servletContainer = 'jetty9'
-}
-
