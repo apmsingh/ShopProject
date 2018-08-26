@@ -1,4 +1,4 @@
-package com.cs.config.dashboard.base;
+package com.cs.controller.config.dashboard.base;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

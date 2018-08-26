@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@SpringBootApplication(scanBasePackages = "com.cs.config.dashboard.base")
+@SpringBootApplication(scanBasePackages = "com.cs.controller.config.*")
 public class ApplicationInitializer {
   
   public static void main(String[] args)
