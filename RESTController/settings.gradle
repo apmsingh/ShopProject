@@ -1,5 +1,6 @@
 rootProject.name = 'RESTController'
 
-include 'Model'
+include 'Model', 'BaseRESTController'
 
 project(':Model').projectDir = new File('../Model')
+project(':BaseRESTController').projectDir = new File('../BaseRESTController')

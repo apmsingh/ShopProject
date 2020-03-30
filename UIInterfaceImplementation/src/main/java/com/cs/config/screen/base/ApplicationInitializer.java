@@ -7,8 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -30,20 +28,6 @@ public class ApplicationInitializer {
       String[] beanNames = ctx.getBeanDefinitionNames();
       Arrays.sort(beanNames);
     };
-  }
-  
-  @GetMapping
-  @RequestMapping("/getValue")
-  public String getValue()
-  {
-    return "Hello World";
-  }
-  
-  @GetMapping
-  @RequestMapping("/")
-  public String index()
-  {
-    return "Greetings from Spring Boot!";
   }
   
 }

@@ -1,6 +1,6 @@
 rootProject.name = 'UIInterfaceImplementation'
 
-include 'UIInterface', 'RESTController', 'BaseRESTController', 'UIConstants', 'Model', 'IModel'
+include 'UIInterface', 'RESTController', 'BaseRESTController', 'UIConstants', 'Model', 'IModel', 'BaseRESTController'
 
 project(':UIInterface').projectDir = new File('../UIInterface')
 project(':RESTController').projectDir = new File('../RESTController')
@@ -8,3 +8,4 @@ project(':BaseRESTController').projectDir = new File('../BaseRESTController')
 project(':UIConstants').projectDir = new File('../UIConstants')
 project(':Model').projectDir = new File('../Model')
 project(':IModel').projectDir = new File('../IModel')
+project(':BaseRESTController').projectDir = new File('../BaseRESTController')
